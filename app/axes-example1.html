@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Modest Axes</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<link rel="stylesheet" type="text/css" href="bower_components/modestcharts/style/axes.css">
 
@@ -10,7 +11,8 @@
 </head>
 <body>
 	<a href="/">Modest Charts</a> Axes
-	<div id="example"></div>
+	<div class="example plain"></div>
+	<div class="example pink"></div>
 </body>
 <script type="text/javascript">
 
@@ -50,7 +52,7 @@ var width = 500, height = 500,
 		.scale(timeScale),
 
 //add an SVG and put the axes on it
-	svg = d3.select('#example').append('svg').attr({ width:width, height:height })
+	svg = d3.selectAll('.example').append('svg').attr({ width:width, height:height })
 		.append('g')
 			.attr('transform','translate(' + margin.left + ',' + margin.top + ')');
 
