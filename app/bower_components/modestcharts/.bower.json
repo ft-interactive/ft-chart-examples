@@ -1,0 +1,40 @@
+{
+  "name": "modestcharts",
+  "authors": [
+    "tomgp <tom.g.pearson@gmail.com>"
+  ],
+  "description": "make modest charts",
+  "main": [
+    "js/ft-date-axis.js",
+    "js/ft-value-axis.js",
+    "style/axes.css"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.svc.ft.com:8080/scm/iglt/d3-chart-bits.git"
+  },
+  "dependencies": {
+    "d3": "~3.4.6"
+  },
+  "_release": "9c136517e9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9c136517e9515e4248f0028c7a3742c1eb76b840"
+  },
+  "_source": "http://git.svc.ft.com:8080/scm/iglt/d3-chart-bits.git",
+  "_target": "*",
+  "_originalSource": "http://git.svc.ft.com:8080/scm/iglt/d3-chart-bits.git"
+}
