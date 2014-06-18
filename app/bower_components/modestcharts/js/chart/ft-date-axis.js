@@ -1,3 +1,5 @@
+'use strict'
+
 if(!ft){
 	var ft = {};
 }
@@ -13,10 +15,10 @@ ft.charts.dateAxis = function(){
 		lineheight = 20, 
 		ticksize = -5,
 		formatter = {},
-		units = ['multi']
+		units = ['multi'],
 		unitOverride = false,
 		yOffset = 0,
-		xOffset = 0;
+		xOffset = 0,
 
 
 	formatter = {
@@ -53,7 +55,7 @@ ft.charts.dateAxis = function(){
 		hours: function(d, i){
 			return parseInt(d3.time.format("%H")(d))+":00"
 		}
-	}
+	},
 
 	interval = {
 		centuries: d3.time.year,
@@ -64,7 +66,7 @@ ft.charts.dateAxis = function(){
 		weeks: d3.time.week,
 		days: d3.time.day,
 		hours: d3.time.hours
-	}
+	},
 
 	increment = {
 		centuries: 100,
@@ -75,7 +77,7 @@ ft.charts.dateAxis = function(){
 		weeks: 1,
 		days: 1,
 		hours: 6	
-	}
+	};
 
 	function unitGenerator(domain){	//which units are most appropriate
 		var u = [];
@@ -105,6 +107,9 @@ ft.charts.dateAxis = function(){
 	}
 
 	function axis(g){
+		
+		g = g.append('g').attr('transform','translate('+xOffset+','+yOffset+')');
+
 		g.append('g').attr('class','x axis').each(function(){
 			var g = d3.select(this);
 			axes.forEach(function(a,i){
@@ -115,7 +120,7 @@ ft.charts.dateAxis = function(){
 						}
 						return 'secondary';
 					})
-					.attr('transform','translate(' + xOffset + ',' + (yOffset + (i * lineheight)) + ')')
+					.attr('transform','translate(0,' + ((i * lineheight)) + ')')
 					.call(a);
 			})
 			//remove text-anchor attribute from year positions
@@ -184,6 +189,13 @@ ft.charts.dateAxis = function(){
 		yOffset = x;
 		return axis;
 	};
+
+	axis.xOffset = function(x){
+		if (!arguments.length) return yOffset;
+		yOffset = x;
+		return axis;
+	};
+
 
 	return axis;
 }

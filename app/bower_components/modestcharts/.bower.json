@@ -28,11 +28,11 @@
   "dependencies": {
     "d3": "~3.4.6"
   },
-  "_release": "9c136517e9",
+  "_release": "c4002c73ec",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9c136517e9515e4248f0028c7a3742c1eb76b840"
+    "commit": "c4002c73ecd3331dadf4d0239be6386e47e9556a"
   },
   "_source": "http://git.svc.ft.com:8080/scm/iglt/d3-chart-bits.git",
   "_target": "*",
