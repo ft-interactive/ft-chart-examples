@@ -1,0 +1,23 @@
+{
+  "name": "ft-chart-examples",
+  "version": "0.0.0",
+  "authors": [
+    "tomgp <tom.g.pearson@gmail.com>"
+  ],
+  "description": "examples using the modest chart components",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.8",
+    "modestcharts":"http://git.svc.ft.com:8080/scm/iglt/d3-chart-bits.git"
+  }
+}

@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Modest Axes</title>
+
+	<link rel="stylesheet" type="text/css" href="bower_components/modestcharts/style/axes.css">
+
+	<script src="bower_components/d3/d3.js"></script>
+	<script src="bower_components/modestcharts/js/chart/ft-date-axis.js"></script>
+	<script src="bower_components/modestcharts/js/chart/ft-value-axis.js"></script>
+</head>
+<body>
+	<a href="/">Modest Charts</a> Axes
+	<div id="example"></div>
+</body>
+<script type="text/javascript">
+
+var width = 500, height = 500,
+
+	margin = {
+		top:50,
+		bottom:50,
+		left:50,
+		right:50
+	},
+
+	chartWidth = width - (margin.left + margin.right),
+	chartHeight = height - (margin.top + margin.bottom),
+
+	timeDomain = [ new Date(2013,3,5), new Date(2013,6,2) ],
+	valueDomain = [150, -50],
+
+
+//build the scales
+	valueScale = d3.scale.linear()
+		.domain(valueDomain)
+		.range([0, chartWidth]),
+
+	timeScale = d3.time.scale()
+		.domain(timeDomain)
+		.range([0, chartWidth]),
+
+
+//build the axes
+	valueAxis = ft.charts.valueAxis()
+		.tickSize(chartWidth)	//make the ticks the width of the chart
+		.scale(valueScale),
+
+	timeAxis = ft.charts.dateAxis()
+		.yOffset(chartHeight)	//position the axis at the bottom of the chart
+		.scale(timeScale),
+
+//add an SVG and put the axes on it
+	svg = d3.select('#example').append('svg').attr({ width:width, height:height })
+		.append('g')
+			.attr('transform','translate(' + margin.left + ',' + margin.top + ')');
+
+	svg.call(valueAxis);
+	svg.call(timeAxis);
+	
+</script>
+</html>
